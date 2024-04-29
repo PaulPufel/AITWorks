@@ -7,7 +7,7 @@ public class CalculationP {
     public static void main(String[] args) {
         // Задаём переменные: день, год рождения, "х".
         int birthDay = 18;
-        int birtYear = 1964;
+        int birtYear = 2024;
         // Значение переменной "х" равняется произведению дня вашего рождения на год
         int x = birthDay * birtYear;
 
