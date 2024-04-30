@@ -12,9 +12,9 @@ public class CalculationP {
     public static void main(String[] args) {
         // Задаём переменные: день, год рождения, "х".
         int birthDay = 18;
-        int birtYear = 2024;
+        int birthYear = 2024;
         // Значение переменной "х" равняется произведению дня вашего рождения на год
-        int x = birthDay * birtYear;
+        int x = birthDay * birthYear;
 
         // Вызываем метод для вычисления суммы чисел от 1 до "х"
         int sum = calculateSum(x);
