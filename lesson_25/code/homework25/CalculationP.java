@@ -11,16 +11,20 @@ package homework25;
 public class CalculationP {
     public static void main(String[] args) {
         // Задаём переменные: день, год рождения, "х".
+        int birtMonth = 1;
         int birthDay = 18;
-        int birthYear = 2024;
+        int birthYear = 1964;
         // Значение переменной "х" равняется произведению дня вашего рождения на год
         int x = birthDay * birthYear;
+        int y = birtMonth * birthYear;
 
         // Вызываем метод для вычисления суммы чисел от 1 до "х"
         int sum = calculateSum(x);
+        int sum1 = calculateSum(y);
 
         // Выводим результат
         System.out.println("Сумма чисел от 1 до " + x + " = " + sum);
+        System.out.println("Сумма чисел от 1 до " + y + " = " + sum1);
     }
 
     public static int calculateSum(int num) {
@@ -28,11 +32,12 @@ public class CalculationP {
         int sum = 0;
 
         // Считаем сумму чисел от 1 до "num"
-        for (int i = 0; i <= num ; i++) {
+        for (int i = 0; i <= num; i++) {
             sum += i;
         }
 
         // Возвращаем результат
         return sum;
+
     }
 }
