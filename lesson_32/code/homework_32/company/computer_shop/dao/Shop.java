@@ -1,6 +1,7 @@
-package homework_32.company.dao;
+package homework_32.company.computer_shop.dao;
 
-import homework_32.company.model.ComputersData;
+import homework_32.company.computer_shop.model.Computer;
+import homework_32.company.computer_shop.model.ComputersData;
 
 public interface Shop {
 
@@ -20,7 +21,7 @@ public interface Shop {
 
     ComputersData findComputer(long serialNumber);
 
-    ComputersData[] findComputerWithDiscount();
+    Computer[] findComputerWithDiscount();
 
     int quantity();
 
@@ -28,4 +29,5 @@ public interface Shop {
 
     void printComputers();
 
+  //  ComputersData findComputerWithDiscount(ComputersData[] comp);
 }

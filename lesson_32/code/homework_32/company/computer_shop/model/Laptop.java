@@ -1,4 +1,4 @@
-package homework_32.company.model;
+package homework_32.company.computer_shop.model;
 
 import java.util.Objects;
 
@@ -9,7 +9,7 @@ public class Laptop extends Computer {
     private int batteryCapacity;
 
 
-    public Laptop(String cpu, int ram, int ssd, String brand, long serialNumber, double price, boolean discount, double displaySize, double weight, int batteryCapacity) {
+    public Laptop(String cpu, int ram, int ssd, String brand, long serialNumber, double price, double discount, double displaySize, double weight, int batteryCapacity) {
         super(cpu, ram, ssd, brand, serialNumber, price, discount);
         this.displaySize = displaySize;
         this.weight = weight;
@@ -53,10 +53,11 @@ public class Laptop extends Computer {
         return Objects.hash(super.hashCode(), displaySize, weight, batteryCapacity);
     }
 
-    @Override
-    public boolean calcPrice() {
-        return true;
 
+    @Override
+    public boolean priceWithDiscount() {
+        double calcPrice = getPrice() - getPrice() * getDiscount();
+        return true;
     }
 
 }

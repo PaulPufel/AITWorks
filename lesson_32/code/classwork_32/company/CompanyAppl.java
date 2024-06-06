@@ -10,7 +10,7 @@ import classwork_32.company.model.Worker;
 public class CompanyAppl {
     public static void main(String[] args) {
 
-        Company company = new CompanyImpl(5); // create object of class CompanyAppl
+        Company company = new CompanyImpl(5); // create object company of class CompanyImpl
 
         Employee[] empl = new Employee[4];
         empl[0] = new Manager(100, "John", "Smith", 45, 160, 5000, 5);

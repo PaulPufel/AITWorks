@@ -1,7 +1,7 @@
-package homework_32.company.dao;
+package homework_32.company.computer_shop.dao;
 
-import homework_32.company.model.Computer;
-import homework_32.company.model.ComputersData;
+import homework_32.company.computer_shop.model.Computer;
+import homework_32.company.computer_shop.model.ComputersData;
 
 public class ShopImpl implements Shop {
     // fields
@@ -46,19 +46,18 @@ public class ShopImpl implements Shop {
     }
 
     @Override
-    public ComputersData[] findComputerWithDiscount() {
-        //count quantity of computers
+    public Computer[] findComputerWithDiscount() {
         int count = 0;
         for (int i = 0; i < size; i++) {
-            if (computers[i].calcPrice()) {
+            if (computers[i].priceWithDiscount()) {
                 count++;
             }
         }
         //fill array
-        ComputersData[] res = new ComputersData[count];
+        Computer[] res = new Computer[count];
         for (int i = 0, j = 0; i < res.length; i++) {
-            if (computers[i].calcPrice()) {
-                res[j++] = computers[i];
+            if (computers[i].priceWithDiscount()) {
+                res[j++] = (Computer) computers[i];
             }
         }
         return res;
@@ -74,10 +73,6 @@ public class ShopImpl implements Shop {
             }
         }
         return res;
-    }
-
-    private double calcPrice() {
-        return 0;
     }
 
     @Override

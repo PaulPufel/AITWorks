@@ -1,4 +1,4 @@
-package homework_32.company.model;
+package homework_32.company.computer_shop.model;
 
 import java.util.Objects;
 
@@ -19,11 +19,13 @@ public abstract class ComputersData {
         this.ssd = ssd;
         this.brand = brand;
         this.serialNumber = serialNumber;
+
     }
 
     public long getSerialNumber() {
         return serialNumber;
     }
+
 
     public String getCpu() {
         return cpu;
@@ -56,14 +58,17 @@ public abstract class ComputersData {
     public void setBrand(String brand) {
         this.brand = brand;
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Computer");
+        sb.append(", cpu: ").append(cpu);
         sb.append(", ram: ").append(ram);
         sb.append(", ssd: ").append(ssd);
         sb.append(", brand: ").append(brand);
-        sb.append("cpu = ").append(serialNumber);
-        sb.append(", price: ").append(calcPrice());
+        sb.append(", serial number: ").append(serialNumber);
+       // sb.append(", price: ").append(price);
+        sb.append(", discount: ").append(priceWithDiscount());
         return sb.toString();
     }
 
@@ -80,7 +85,7 @@ public abstract class ComputersData {
     }
 
     // переопределить
-    public abstract boolean calcPrice(); // abstract method
+    public abstract boolean priceWithDiscount(); // abstract method
 
 }
 

@@ -1,11 +1,11 @@
-package homework_32.company.tests;
+package homework_32.company.computer_shop.tests;
 
-import homework_32.company.dao.Shop;
-import homework_32.company.dao.ShopImpl;
-import homework_32.company.model.Computer;
-import homework_32.company.model.ComputersData;
-import homework_32.company.model.Laptop;
-import homework_32.company.model.SmartPhone;
+import homework_32.company.computer_shop.dao.Shop;
+import homework_32.company.computer_shop.dao.ShopImpl;
+import homework_32.company.computer_shop.model.Computer;
+import homework_32.company.computer_shop.model.ComputersData;
+import homework_32.company.computer_shop.model.Laptop;
+import homework_32.company.computer_shop.model.SmartPhone;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,16 +13,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ShopImplTest {
     Shop shop;
-    ComputersData[] comp;
+    ComputersData[] comp ;
 
     @BeforeEach
     void setUp() {
         shop = new ShopImpl(5);
         comp = new ComputersData[4];
-        comp[0] = new Computer("i5", 12, 256, "HP", 100_000_000_000_000_000L, 350, false);
-        comp[1] = new Computer("i7", 16, 512, "Samsung", 200_000_000_000_000_000L, 500, false);
-        comp[2] = new Laptop("i5", 12, 256, "Lenovo", 300_000_000_000_000_000L, 400, false, 23, 2.2, 5);
-        comp[3] = new SmartPhone("i6", 14, 128, "Apple", 400_000_000_000_000_000L, 600, true, "iOS8");
+        comp[0] = new Computer("i5", 12, 256, "HP", 100_000_000_000_000_000L, 350, 0);
+        comp[1] = new Computer("i7", 16, 512, "Samsung", 200_000_000_000_000_000L, 500, 0);
+        comp[2] = new Laptop("i5", 12, 256, "Lenovo", 300_000_000_000_000_000L, 400, 0, 23, 2.2, 5);
+        comp[3] = new SmartPhone("i6", 14, 128, "Apple", 400_000_000_000_000_000L, 600, 0.2, "iOS8");
 
         // необходимо добавить элементы массива в company
         for (int i = 0; i < comp.length; i++) {
@@ -39,14 +39,14 @@ public class ShopImplTest {
         assertFalse(shop.addComputer(comp[1]));
 
         // добавляем компьютер
-        ComputersData computersData = new Computer("i9", 64, 512, "Apple", 500_000_000_000_000_000L, 450, true);
+        ComputersData computersData = new Computer("i9", 64, 512, "Apple", 500_000_000_000_000_000L, 450, 0);
         assertTrue(shop.addComputer(computersData));
 
         // проверяем кол-во после добавления
         assertEquals(5, shop.quantity());
 
         // нельзя превысить capacity
-        ComputersData computer1 = new Laptop("Ryzen5", 32, 128, "Hurican", 600_000_000_000_000_000L, 550,false,27, 1.7, 6);
+        ComputersData computer1 = new Laptop("Ryzen5", 32, 128, "Hurican", 600_000_000_000_000_000L, 550,0,27, 1.7, 6);
         assertFalse(shop.addComputer(computer1));
         shop.printComputers();
     }

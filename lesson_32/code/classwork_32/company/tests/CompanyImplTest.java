@@ -58,6 +58,13 @@ class CompanyImplTest {
     }
 
     @Test
+    void updateEmployee() {
+        assertEquals(e[2], company.removeEmployee(103));
+        assertEquals(3, company.quantity());
+        company.printEmployee();
+    }
+
+    @Test
     void findEmployee() {
         // find employee with id = 102
         assertEquals( e[1], company.findEmployee(102));

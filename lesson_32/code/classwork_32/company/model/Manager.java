@@ -30,7 +30,7 @@ public class Manager extends Employee {
 
     @Override
     public double calcSalary() {
-        double salary = baseSalary + hours*grade;
+        double salary = baseSalary + hours * grade;
         return salary;
     }
 }
