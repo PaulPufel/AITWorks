@@ -2,16 +2,10 @@ package classwork_33.cats;
 
 import java.util.Objects;
 
-public class Cat implements Comparable<Cat>{
-    // этот метод сравнивает текущий объект и Cat o
-    @Override
-    public int compareTo(Cat o) {
-        int res = this.age - o.age; // сравнение объектов по полю age
-        return res;
-    }
+public class Cat implements Comparable<Cat> {
 
     private int id;
-    private  String name;
+    private String name;
     private String breed;
     private int age;
     private double weight;
@@ -79,13 +73,26 @@ public class Cat implements Comparable<Cat>{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Cat cat)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cat cat = (Cat) o;
         return id == cat.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(id);
+        return id;
     }
 
+    // Этот метод позволяет проводить сравнение объектов этого класса
+    // он сравнивает текущий объект (this) с Cat o и возвращает целое число.
+    // Если оно > 0, то объекты меняются местами, в остальных случаях объекты не меняются местами
+
+    // этот метод сравнивает текущий объект и Cat o
+    @Override
+    public int compareTo(Cat o) {
+       // int res = this.getAge() - o.getAge(); //  одинаково работает, что и this.age - o.age;
+        int res = this.age - o.age; // сравнение объектов по полю age
+        return res;
+    }
 }
+

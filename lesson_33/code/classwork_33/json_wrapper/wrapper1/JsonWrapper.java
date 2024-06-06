@@ -4,8 +4,9 @@ public class JsonWrapper {
 
     // {value: value} - это формат json
     // field
-    private Object value;
+    private Object value;  // объект value созданный на базе Object
 
+    // конструктор
     public JsonWrapper(Object value) {
         this.value = value;
     }
