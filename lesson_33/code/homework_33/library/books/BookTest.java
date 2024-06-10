@@ -14,7 +14,7 @@ class BookTest {
 
     @BeforeEach
     void setUp() {
-
+        // Задаём массив книг и заполняем его значениями
         book = new Book[4];
         book[0] = new Book("Нос", "Гоголь", 1868, 100000000);
         book[1] = new Book("Война и мир", "Толстой", 1836, 200000000);
@@ -26,9 +26,11 @@ class BookTest {
     @Test
     void testBookSort() {
         System.out.println("=============================== Test Book sorting =================================");
+        // напечатать массив
         printArray(book);
-        Arrays.sort(book); // производим сортировку в соответствии с тем полем, которое указано в методе compareTo
-
+        // производим сортировку в соответствии с тем полем, которое указано в методе compareTo
+        Arrays.sort(book);
+        // напечатать отсортированный массив
         System.out.println("--------------------- After sorting by year of publishing ---------------------------");
         printArray(book);
     }
