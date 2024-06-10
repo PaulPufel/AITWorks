@@ -1,6 +1,5 @@
 package homework_35.cars;
 
-import homework_35.books.Book;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +14,7 @@ class CarTest {
 
     @BeforeEach
     void setUp() {
-        // Задаём массив книг и заполняем его значениями
+
         cars = new Car[5];
         cars[0] = new Car("VW", "Black", 55000, 2020);
         cars[1] = new Car("Mercedes", "White", 192000, 2000);
