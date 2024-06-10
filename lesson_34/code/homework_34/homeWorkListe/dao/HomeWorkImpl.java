@@ -1,5 +1,6 @@
 package homework_34.homeWorkListe.dao;
 
+import classwork_32.company.model.Employee;
 import homework_34.homeWorkListe.model.Task;
 
 public class HomeWorkImpl implements HomeWorkList {
@@ -16,7 +17,7 @@ public class HomeWorkImpl implements HomeWorkList {
 
     @Override
     public boolean addTask(Task task) {
-        if (task == null || size == tasks.length || findTask(task.getId()) != null){ //
+        if (task == null || size == tasks.length || findTask(task.getId()) != null){
             return false;
         }
         tasks[size++] = task;
@@ -62,7 +63,7 @@ public class HomeWorkImpl implements HomeWorkList {
     @Override
     public Task updateTask(int id, String task) {
         for (Task task1 : tasks) {
-            if (task.length() == id) {
+            if (task1.getId() == id) {
                 return task1;
             }
         }
