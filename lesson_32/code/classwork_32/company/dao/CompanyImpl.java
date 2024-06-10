@@ -122,22 +122,15 @@ public class CompanyImpl implements Company {
 
     @Override
     public Employee updateEmployee(int id, String secondName) {
-
-        for (int i = 0; i < size; i++) {
-            if (employees[i].getId() == id) {
-                return employees[i];
+        // перебираем всех employee
+        for (Employee employee : employees) {
+            // найти по id
+            if (employee.getId() == id) {
+                // использовать setter secondName
+                return employee;  // object type Employee
             }
         }
         return null;
     }
+
 }
-
-// TODO
-
-// найти по id
-
-// использовать setter
-
-// return null; // object type Employee
-
-

@@ -11,6 +11,7 @@ package classwork_32.company.dao;
 
 import classwork_32.company.model.Employee;
 
+// class interface
 public interface Company {
 
     // define abstract methods
@@ -36,6 +37,6 @@ public interface Company {
     // список сотрудников с зарплатой от ... до ...
     Employee[] findEmployeeSalaryRange(double min, double max);
 
-    // new method
+    // new method updateEmployee with two arguments
     Employee updateEmployee(int id, String secondName);
 }

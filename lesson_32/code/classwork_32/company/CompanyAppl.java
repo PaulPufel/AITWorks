@@ -1,6 +1,5 @@
 package classwork_32.company;
 
-import classwork_32.company.dao.Company;
 import classwork_32.company.dao.CompanyImpl;
 import classwork_32.company.model.Employee;
 import classwork_32.company.model.Manager;
@@ -10,7 +9,7 @@ import classwork_32.company.model.Worker;
 public class CompanyAppl {
     public static void main(String[] args) {
 
-        Company company = new CompanyImpl(5); // create object company of class CompanyImpl
+        CompanyImpl company = new CompanyImpl(5); // create object company of class CompanyImpl
 
         Employee[] empl = new Employee[4];
         empl[0] = new Manager(100, "John", "Smith", 45, 160, 5000, 5);
