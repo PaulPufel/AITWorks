@@ -1,5 +1,8 @@
 package homework_35.cars;
 
+// Сделать пример класса c интерфейсом Comparable по двум полям.
+// Например: автомобили одной марки, но с разным пробегом (или ценой)
+
 import java.util.Objects;
 
 public class Car implements Comparable<Car> {
@@ -72,7 +75,12 @@ public class Car implements Comparable<Car> {
 
     @Override
     public int compareTo(Car o) {
-        int res = this.builtYear - o.builtYear;
+        int res = this.model.compareTo(o.model); // сортировка по model (по алфавиту)
+        if (res != 0) { // если model НЕ совпали
+            return res; // вернули результат сравнения
+        } else {
+            res = (this.mileage - o.mileage);  // иначе сортируем по пробегу
+        }
         return res;
     }
 }

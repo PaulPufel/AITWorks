@@ -1,28 +1,28 @@
-package homework_35.books;
-
-// Сделать пример класса c интерфейсом Comparable по двум полям.
-// Например: книги одного автора, но с разными годами издания.
+package homework_35_leo.booksleo;
 
 import java.util.Objects;
 
-public class Book implements Comparable<Book> {
+// code by Yuliia Dietz
 
-    // fields of class
+public class Book implements Comparable<Book>{
+    private long isbn;
     private String title;
     private String author;
     private int yearOfPublishing;
-    private int isbn;
 
-    // constructor
-    public Book(String title, String author, int yearOfPublishing, int isbn) {
+    public Book(long isbn, String title, String author, int yearOfPublishing) {
+        this.isbn = isbn; // 13 digits
         this.title = title;
         this.author = author;
         this.yearOfPublishing = yearOfPublishing;
-        this.isbn = isbn;
     }
 
-    public int getIsbn() {
+    public long getIsbn() {
         return isbn;
+    }
+
+    public void setIsbn(long isbn) {
+        this.isbn = isbn;
     }
 
     public String getTitle() {
@@ -52,10 +52,10 @@ public class Book implements Comparable<Book> {
     @Override
     public String toString() {
         return "Book{" +
-                "title='" + title + '\'' +
+                "isbn=" + isbn +
+                ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", yearOfPublishing=" + yearOfPublishing +
-                ", isbn=" + isbn +
                 '}';
     }
 
@@ -63,21 +63,20 @@ public class Book implements Comparable<Book> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Book book)) return false;
-        return yearOfPublishing == book.yearOfPublishing && Objects.equals(author, book.author);
+        return isbn == book.isbn;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(author, yearOfPublishing);
+        return Objects.hash(isbn, author);
     }
 
     @Override
     public int compareTo(Book o) {
-        int res = this.author.compareTo(o.author); // compare by author
-        if(res !=0 ){ // если res не равен 0
-            return res; // то он нас устраивает, то есть по нему и будет сортировка
-        } else {
-            res = this.yearOfPublishing - o.yearOfPublishing; // сортировка по году издания
+        int res = this.author.compareTo(o.author); // сортируем по автору
+        if(res == 0){ // если книги одного автора
+            res = this.yearOfPublishing - o.yearOfPublishing;
+            // res = Integer.compare(this.yearOfPublishing, o.yearOfPublishing); // то сортируем по году издания
         }
         return res;
     }
