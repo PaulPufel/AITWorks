@@ -1,5 +1,7 @@
 package homework.product.model;
 
+// Создать класс Food расширяющий класс Product с полем private String expDate,
+// которое хранит дату истечения срока годности.
 // Во всех классах переопределить метод toString.
 
 public class Food extends Product {
