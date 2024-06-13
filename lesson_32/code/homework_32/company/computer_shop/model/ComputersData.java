@@ -67,7 +67,6 @@ public abstract class ComputersData {
         sb.append(", ssd: ").append(ssd);
         sb.append(", brand: ").append(brand);
         sb.append(", serial number: ").append(serialNumber);
-       // sb.append(", price: ").append(price);
         sb.append(", discount: ").append(priceWithDiscount());
         return sb.toString();
     }

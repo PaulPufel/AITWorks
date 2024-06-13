@@ -28,6 +28,4 @@ public interface Shop {
     double totalSales();
 
     void printComputers();
-
-  //  ComputersData findComputerWithDiscount(ComputersData[] comp);
 }

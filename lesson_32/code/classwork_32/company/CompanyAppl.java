@@ -24,26 +24,28 @@ public class CompanyAppl {
 
         // print all employee
         company.printEmployee();
-        System.out.println("--------------------------------------");
+        System.out.println("---------------------------------------------------------------");
 
         // find employee with id = 101
         Employee employee = company.findEmployee(101);
         System.out.println(employee);
+        System.out.println("________________________________________________________________");
 
         // total salary
         double totalSalary = company.totalSalary();
         System.out.println("Total salary of company: " + totalSalary);
+        System.out.println("________________________________________________________________");
 
         // add new employee
         Employee newEmployee = new Worker(104, "Robert", "Gubert", 26, 80, 5);
-        System.out.println("______________________________________");
         company.addEmployee(newEmployee);
         company.printEmployee();
         totalSalary = company.totalSalary(); // calculate new total salary
         System.out.println("Total salary of company: " + totalSalary);
+        System.out.println("________________________________________________________________");
 
         Employee[] goodEmployee = company.findEmployeeHoursGreaterThen(100);
-        // System.out.println(goodEmployee);
+        System.out.println(goodEmployee);
         for (Employee e : goodEmployee) {
             System.out.println(e);
         }
