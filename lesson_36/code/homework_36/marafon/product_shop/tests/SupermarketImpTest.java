@@ -42,7 +42,7 @@ public class SupermarketImpTest {
         assertFalse(supermarket.addFood(foods[1]));
 
         // добавляем food
-        Food food = new Food("Meat", 18.50, 1004L, "2024-06-30");
+        Food food = new Food("Dog", 18.50, 1004L, "2024-06-30");
         assertTrue(supermarket.addFood(food));
 
         // проверяем кол-во после добавления
