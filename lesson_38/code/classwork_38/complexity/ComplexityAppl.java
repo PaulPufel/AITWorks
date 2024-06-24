@@ -47,6 +47,7 @@ public class ComplexityAppl {
         index = Arrays.binarySearch(array, 100);
         System.out.println(index);
 
+        // логарифмическая сложность O(log(n))
         index = Arrays.binarySearch(array, 115);
         System.out.println(index);
 
