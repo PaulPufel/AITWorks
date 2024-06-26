@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class AthletesApplTest {
+
     public static void main(String[] args) {
 
         List<Athletes> athletesList = new ArrayList<>();
