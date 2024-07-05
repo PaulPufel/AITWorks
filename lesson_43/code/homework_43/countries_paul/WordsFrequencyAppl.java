@@ -1,4 +1,4 @@
-package homework_43.map_introduction;
+package homework_43.countries_paul;
 
 // Задание 2.
 // Подсчитайте частоту использования слов в предложении Л.Н.Толстого:
@@ -25,7 +25,7 @@ public class WordsFrequencyAppl {
                 "Пушкиных, – в губернском городе К. был съезд помещиков, и кончались дворянские выборы.";
 
         // Удаление знаков препинания и приведение к нижнему регистру
-        text = text.replaceAll("[^a-zA-Zа-яА-Я0-9\\s]", "").toLowerCase();
+        text = text.replaceAll("[^a-яA-Яа-яА-Я0-9\\s]", "").toLowerCase();
 
         // Разделение текста на слова
         String[] words = text.split("\\s+");

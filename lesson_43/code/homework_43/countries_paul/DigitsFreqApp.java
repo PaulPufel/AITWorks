@@ -1,4 +1,4 @@
-package homework_43.map_introduction;
+package homework_43.countries_paul;
 
 // Задача 3(*).
 // В классе DigitsFreqApp сгенерировать один миллион положительных целых чисел в интервале от 100 до 1000
