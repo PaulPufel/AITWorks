@@ -6,8 +6,6 @@ package homework_45.institute;
 
 // Дополнительное задание (*): добавить у каждого студента поле int[] marks с его оценками и рассчитать средний балл.
 
-import classwork_44.users.User;
-
 import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -74,25 +72,29 @@ public class DekanatAppl {
                 .collect(Collectors.toList());
         sortedByBirtDate.forEach(System.out::println);
 
+
         // Средний возраст студентов
-//        System.out.println("=============================== Средний возраст студентов ===============================");
-//        double averageAgeStudents = studentList.stream().mapToDouble(Student::getAge).average().orElse(0.0);
-//        System.out.println("Average age of students: " + averageAgeStudents);
+        System.out.println("=============================== Средний возраст студентов ===============================");
+        double averageAgeStudents = studentList.stream()
+                     .mapToDouble(Student::getAge)
+                     .average().
+                     orElse(0.0);
+        System.out.println("Average age of students: " + averageAgeStudents);
 
         // Средний возраст студентов по курсу
-//        System.out.println("======================== Средний возраст студентов по курсу =============================");
-//        Map<String, Double> averageAgeStudentsByCourse = studentList.stream()
-//                .collect(Collectors.groupingBy(Student::getCourse, Collectors.averagingDouble(Student::getAge)));
-//        System.out.println("Average age of students by course: " + averageAgeStudentsByCourse);
-//
+        System.out.println("======================== Средний возраст студентов по курсу =============================");
+        Map<String, Double> averageAgeStudentsByCourse = studentList.stream()
+                .collect(Collectors.groupingBy(Student::getCourse, Collectors.averagingDouble(Student::getAge)));
+        System.out.println("Average age of students by course: " + averageAgeStudentsByCourse);
 
-        // Сортировка студентов по фамилии и возрасту
+
+        // Сортировка студентов по фамилии и возСортировка студенто
         System.out.println("======================= Сортировка студентов по фамилии и возрасту ======================");
         List<Student> sortedByLastNameAndAge = studentList.stream()
                 .sorted(
                         Comparator.comparing(Student::getLastName)
                                 .thenComparing(Student::getBirtDay))
-                .collect(Collectors.toList());
+                                .toList();
         System.out.println("Students sorted by last name and age: ");
         sortedByLastNameAndAge.forEach(System.out::println);
 
@@ -105,7 +107,8 @@ public class DekanatAppl {
 
     private static void countGender(List<Student> students) {
         long maleCount = students.stream()
-                .filter(student -> student.getGender().equalsIgnoreCase("male"))
+                .filter(student -> student.getGender()
+                        .equalsIgnoreCase("male"))
                 .count();
         System.out.println("Number of males: " + maleCount);
 

@@ -1,20 +1,4 @@
-package homework_45.institute;
-
-//  Задача 1. Создать класс Student с полями:
-
-// id,
-// firstName,
-// lastName,
-// birtDay,
-// course,
-// groupNum (номер группы),
-// country,
-// gender(пол).
-// В приложении DekanatAppl создать студентов из разных стран, которые учатся на разных курсах, в разных группах.
-// Сделать списки студентов по курсам, по группам, отсортированные по фамилиям и возрасту.
-// Сколько студентов мужчин? Сколько женщин? Какой у них средний возраст по курсу? По всем студентам?
-
-// Дополнительное задание (*): добавить у каждого студента поле int[] marks с его оценками и рассчитать средний балл.
+package homework_45.students;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -23,18 +7,18 @@ import java.util.Comparator;
 import java.util.Objects;
 
 public class Student {
-
-    private int id;
+    // id, firstName, lastName, birtDay,
+    // course, groupNum (номер группы), country, gender(пол)
+    private long id;
     private String firstName;
     private String lastName;
     private String birtDay;
     private String course;
-    private int groupNum;   // (номер группы),
+    private int groupNum;
     private String country;
-    private String gender;  // (пол).
+    private String gender;
 
-
-    public Student(int id, String firstName, String lastName, String birtDay, String course, int groupNum, String country, String gender) {
+    public Student(long id, String firstName, String lastName, String birtDay, String course, int groupNum, String country, String gender) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -45,11 +29,11 @@ public class Student {
         this.gender = gender;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -109,18 +93,6 @@ public class Student {
         this.gender = gender;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Student student)) return false;
-        return id == student.id && groupNum == student.groupNum && Objects.equals(firstName, student.firstName) && Objects.equals(lastName, student.lastName);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, firstName, lastName, groupNum);
-    }
-
 //    @Override
 //    public String toString() {
 //        return "Student{" +
@@ -135,9 +107,10 @@ public class Student {
 //                '}';
 //    }
 
+
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Student{");
+        final StringBuffer sb = new StringBuffer("Student{");
         sb.append("id=").append(id);
         sb.append(", firstName='").append(firstName).append('\'');
         sb.append(", lastName='").append(lastName).append('\'');
@@ -148,6 +121,18 @@ public class Student {
         sb.append(", gender='").append(gender).append('\'');
         sb.append('}');
         return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Student student)) return false;
+        return id == student.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash( id );
     }
 
     public static Comparator<Student> birthdayComparator = (s1, s2) -> {
