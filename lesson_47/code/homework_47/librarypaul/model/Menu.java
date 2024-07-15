@@ -19,4 +19,30 @@ public enum Menu {
         this.item = item;
         this.action = action;
     }
+
+    // метод, void - ничего не возвращает, он печатает
+    public static void printMenu(){
+       Menu[] menu = Menu.values(); // put enum items in to array
+        for (int i = 0; i < menu.length; i++) {
+            System.out.print((menu[i].item) + " - " + menu[i].action + " | ");
+        }
+
+        System.out.println(); // new line
+    }
+
+    public int getItem() {
+        return item;
+    }
+
+    public void setItem(int item) {
+        this.item = item;
+    }
+
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
 }

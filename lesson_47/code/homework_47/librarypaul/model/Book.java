@@ -3,12 +3,11 @@ package homework_47.librarypaul.model;
 import java.util.Objects;
 
 public class Book {
-    final String isbn;
+    String isbn;
     String title;
     Author author;
     int yearOfPublishing;
     boolean isRented;
-
 
     public Book(String isbn, String title, Author author, int yearOfPublishing, boolean isRented) {
         this.isbn = isbn;
@@ -17,6 +16,10 @@ public class Book {
         this.yearOfPublishing = yearOfPublishing;
         this.isRented = isRented;
     }
+
+    public Book(String isbn, String title, String lastName) {
+    }
+
 
     public String getIsbn() {
         return isbn;

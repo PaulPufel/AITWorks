@@ -6,8 +6,6 @@ import homework_47.librarypaul.model.Author;
 import homework_47.librarypaul.model.Book;
 import org.junit.jupiter.api.Test;
 
-import java.time.LocalDate;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LibraryImplTest {
@@ -15,8 +13,8 @@ public class LibraryImplTest {
     @Test
     public void testAddBook() {
         Library library = new LibraryImpl();
-        Author author1 = new Author("Aleksandr", "Pushkin", LocalDate.of(1836, 2, 14), "Russia", 4.5);
-        Author author2 = new Author("Lev", "Tolstoy", LocalDate.of(1835, 7, 27), "Russia", 5.5);
+        Author author1 = new Author("Aleksandr");
+        Author author2 = new Author("Lev");
 
         Book book1 = new Book("12345", "Eugene Onegin", author1, 1873, false);
         Book book2 = new Book("12346", "War and Peace", author2, 1901, true);
@@ -30,7 +28,7 @@ public class LibraryImplTest {
     public void testFindBookByAuthor() {
         Library library = new LibraryImpl();
 
-        Author author1 = new Author("Aleksandr", "Pushkin", LocalDate.of(1836, 2, 14), "Russia", 4.5);
+        Author author1 = new Author("Aleksandr");
         Book book1 = new Book("12345", "Eugene Onegin", author1, 1873, false);
 
         library.addBook(book1);
@@ -41,7 +39,7 @@ public class LibraryImplTest {
     public void testFindBookByIsbn() {
         Library library = new LibraryImpl();
 
-        Author author1 = new Author("Aleksandr", "Pushkin", LocalDate.of(1836, 2, 14), "Russia", 4.5);
+        Author author1 = new Author("Aleksandr");
         Book book1 = new Book("12345", "Eugene Onegin", author1, 1873, false);
 
         library.addBook(book1);
@@ -52,7 +50,7 @@ public class LibraryImplTest {
     public void testRentBook() {
         Library library = new LibraryImpl();
 
-        Author author1 = new Author("Aleksandr", "Pushkin", LocalDate.of(1836, 2, 14), "Russia", 4.5);
+        Author author1 = new Author("Aleksandr");
         Book book1 = new Book("12345", "Eugene Onegin", author1, 1873, false);
 
         library.addBook(book1);
@@ -64,7 +62,7 @@ public class LibraryImplTest {
     public void testGetBackBook() {
         Library library = new LibraryImpl();
 
-        Author author1 = new Author("Aleksandr", "Pushkin", LocalDate.of(1836, 2, 14), "Russia", 4.5);
+        Author author1 = new Author("Aleksandr");
         Book book1 = new Book("12345", "Eugene Onegin", author1, 1873, true);
 
         library.addBook(book1);
@@ -77,10 +75,10 @@ public class LibraryImplTest {
     public void testQuantity() {
         Library library = new LibraryImpl();
 
-        Author author1 = new Author("Aleksandr", "Pushkin", LocalDate.of(1836, 2, 14), "Russia", 4.5);
+        Author author1 = new Author("Aleksandr");
         Book book1 = new Book("12345", "Eugene Onegin", author1, 1873, true);
 
-        Author author2 = new Author("Lev", "Tolstoy", LocalDate.of(1845, 7, 27), "Russia", 5.5);
+        Author author2 = new Author("Lev");
         Book book2 = new Book("12346", "War and Peace", author2, 1901, true);
 
         library.addBook(book1);

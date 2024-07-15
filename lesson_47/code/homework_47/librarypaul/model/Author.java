@@ -5,9 +5,9 @@ import java.util.Objects;
 
 public class Author {
 
-    final String name;
-    final String lastName;
-    final LocalDate birthDay;
+    String name;
+    String lastName;
+    LocalDate birthDay;
     String country;
     double rating;
 
@@ -17,6 +17,10 @@ public class Author {
         this.birthDay = birthDay;
         this.country = country;
         this.rating = rating;
+    }
+
+    public Author(String name) {
+
     }
 
     public String getName() {
@@ -70,7 +74,7 @@ public class Author {
                 '}';
     }
 
-    public String displayAuthor(){
-        return "name= " + name + ", lastName='" + lastName + ", birthDay=" + birthDay;
+    public String displayAuthor() {
+        return "name= " + name + ", authorName='" + lastName + ", birthDay=" + birthDay;
     }
 }
